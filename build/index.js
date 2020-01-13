@@ -12473,7 +12473,6 @@ function _templateObject() {
   return data;
 }
 
-var useState = wp.element.useState;
 
 
 var POSTS_QUERY = Object(apollo_boost__WEBPACK_IMPORTED_MODULE_3__["gql"])(_templateObject());
@@ -12486,27 +12485,14 @@ var Posts = function Posts() {
 
   var posts = data.posts.nodes;
   if (loading) return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("p", null, "Loading posts...");
-  if (error) return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("p", null, "Error :("); // const [posts, setPosts] = useState([]);
-  // const posts = [...data.posts.nodes];
-  // const sortedPosts = data.posts.nodes
-  //   .sort((a, b) => a.votes < b.votes)
-  //   .map(({ id, title, votes }) => (
-  //     <li key={id}>
-  //       <button>&#8679;</button>
-  //       {votes}
-  //       <button>&#8681;</button>
-  //       <h3>{title}</h3>
-  //     </li>
-  //   ));
-  // return <ul>{sortedPosts}</ul>;
-
+  if (error) return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("p", null, "Error :(");
   return posts.map(function (_ref) {
     var postId = _ref.postId,
         title = _ref.title;
     return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("h3", {
       key: postId
     }, title);
-  }); // return <ul>{sortedPosts}</ul>;
+  });
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Posts);
